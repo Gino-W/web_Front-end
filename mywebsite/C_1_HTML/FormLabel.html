@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 表单标签：from
+                action属性:提交的路径,默认是提交到当前页面
+                method属性:请求的方式，GET(默认)和POST
+                    -> GET:数据会显示到地址栏中,GET方式提交是有大小限制的
+                    -> POST:数据不会显示到地址栏中,POST方式提交没有大小限制
+            文本框:input
+                name:表单元素的名称
+                value:文本框的默认值
+                type:文本框属性
+                size:文本框的长度
+                maxlength:文本框输入的最大长度
+                readonly:只读文本框(boolean)
+         -->
+    <form action="http://www.baidu.com" method="GET">
+        用户名：<input name="username" value="G" type="text" size="20px" maxlength="6" />
+        <br/>
+        密&nbsp&nbsp&nbsp码：<input name="password" value="123456" type="password" />
+        <br/>
+        性&nbsp&nbsp&nbsp别：<input name="gender" type="radio" value="male" checked="true"/>男
+                             <input name="gender" type="radio" value="female"/>女
+        <br/>
+        爱&nbsp&nbsp&nbsp好：<input name="hobby" type="checkbox" value="sing" checked="true"/>唱歌
+                             <input name="hobby" type="checkbox" value="dancing" />跳舞
+                             <input name="hobby" type="checkbox" value="skiing" />滑雪
+        <br/>
+        国&nbsp&nbsp&nbsp家：<select name="country">
+                                <option value="CHINA">中国</option>
+                                <option value="USA">美国</option>
+                                <option value="JAPAN" selected>日本</option>
+                            </select>
+        <br/>
+        简&nbsp&nbsp&nbsp介：<textarea name="info" cols="5" rows="1">66666</textarea>
+        <br/>
+        <input type="reset" value="重置" />
+        <input type="submit" value="注册"/>
+        <input type="button" value="没卵用" />
+        <input type="hidden" name="hidden" value="111"/>
+    </form>
+</body>
+</html>
