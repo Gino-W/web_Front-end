@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CSS_Selector</title>
+    <style>
+        /* 元素选择器 */
+        div{
+            width: 50pt;
+            height: 50pt;
+            background-color: chartreuse;
+        }
+        /* ID选择器 */
+        #d1{
+            width: 50sp;
+            height: 50sp;
+            background-color: crimson;
+        }
+        /* 类选择器 */
+        .d2{
+            width: 50sp;
+            height: 50sp;
+            background-color: gold;
+        }
+        /* 属性选择器 */
+        input[type="text"]{
+            background-color: mediumspringgreen;
+        }
+        /* 后代选择器(不分层级) */
+        h1 strong{
+            color: mediumvioletred;
+        }
+        /* 子元素选择器(第一层级) */
+        h2>Strong{
+            color: palevioletred;
+        }
+        /* 并列选择器 */
+        #span1,.span2{
+            background-color: steelblue;
+        }
+    </style>
+</head>
+<body>
+    <!-- 元素选择器 -->
+    <div></div>
+    <hr/>
+    <!-- ID选择器 -->
+    <div id="d1"></div>
+    <hr/>
+    <!-- 类选择器 -->
+    <div class="d2"></div>
+    <hr/>
+    <!-- 属性选择器 -->
+    <input type="text" />
+    <!-- 后代选择器 -->
+    <h1>
+        <strong>Fuck</strong> you <strong>Tom</strong>
+    </h1>
+    <h1>
+        <em>Fuck<strong> you </strong>Tom</em>
+    </h1>
+    <hr/>
+    <!-- 子元素选择器 -->
+    <h2>
+        <strong>Fuck</strong> you <strong>Tom</strong>
+    </h2>
+    <h2>
+        <em>Fuck<strong> you </strong>Tom</em>
+    </h2>
+    <hr/>
+    <!-- 并列选择器 -->
+    <span id="span1">Tom</span>
+    <hr/>
+    <span class="span2">Jerry</span>
+</body>
+</html>
