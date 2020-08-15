@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>first_JS</title>
+    <!-- 嵌入式 -->
+    <script type="text/javascript">
+        function method1(){
+            alert("Hello JS!");
+            var a = 10;
+            var b = '10';
+            // 运算符
+            // alert(a==b);
+            // alert(a===b);
+            // var c = (a==b)?1:0;
+            // alert(c);
+
+            //if
+            // var score = 60;
+            // if(score<60){
+            //     alert("不及格");
+            // } else{
+            //     alert("及格");
+            // }
+
+            //switch
+            var s = 6;
+            // switch(s){
+            //     case 1: alert("星期一");break;
+            //     case 2: alert("星期二");break;
+            //     case 3: alert("星期三");break;
+            //     case 4: alert("星期四");break;
+            //     case 5: alert("星期五");break;
+            //     case 6: alert("星期六");break;
+            //     case 7: alert("星期七");break;
+            //     default: alert("啥也不是");
+            // }
+
+            //for
+            // for(var i=0; i<3;i++){
+            //     alert("Fuck you Tom");
+            // }
+
+            //while
+            // var w = 100;
+            // var sum = 0;
+            // while(w>90){
+            //     w-=2
+            //     sum++;
+            // }
+            // alert(sum);
+
+            //do-while
+            // do{
+            //     w-=2;
+            //     sum++;
+            // }while(w>90)
+            // alert(sum);
+
+            // var arr = new Array(2);
+            // arr[0]=1;
+            // arr[1]=false;
+            // arr[2]=11;
+            // arr[3]=12
+            // alert(arr[3]);
+            // alert(arr.length);
+            // document.write("我去！！！");
+
+            //二位数组
+            var arr = new Array(7);
+            for(var i=0; i<arr.length; i++){
+                arr[i] = new Array(2);
+            }
+            arr[0][0] = "Sunday";
+            arr[0][1] = "星期日";
+            arr[1][0] = "Monday";
+            arr[1][1] = "星期一";
+            arr[2][0] = "Tuesday";
+            arr[2][1] = "星期二";
+            arr[3][0] = "Wensday";
+            arr[3][1] = "星期三";
+            arr[4][0] = "Thursday";
+            arr[4][1] = "星期四";
+            arr[5][0] = "Friday";
+            arr[5][1] = "星期五";
+            arr[6][0] = "Saturday";
+            arr[6][1] = "星期六";
+            alert(arr);
+        }
+    </script>
+    <!-- 引入JS文件 -->
+    <script type="text/javascript" src="./JS/myJS.js"></script>
+</head>
+<body>
+    <!-- 定义函数时直接使用JS -->
+    <input type="button" value="普通按钮" onclick="alert('Hello World!')" />
+    <!-- 嵌入式 -->
+    <input type="button" value="普通按钮" onclick="method1()" />
+    <!-- 引入式 -->
+    <input type="button" value="普通按钮" onclick="method2()" />
+</body>
+</html>
