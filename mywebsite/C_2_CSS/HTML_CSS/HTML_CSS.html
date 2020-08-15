@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HTML_CSS</title>
+
+    <style>
+        h2{
+            color: chartreuse;
+            font-size: 60px;
+        }
+    </style>
+
+    <link href="HTML_CSS.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <!-- 
+        内联结合：
+				缺点：不能复用!
+				优点：简单！
+				对少数的特定的元素进行单独设置！
+
+        内部结合：
+				1，需要在head标签中，使用style标签
+				2，使用选择器选中元素(后面详细讲)
+				3，编写css代码
+				格式：
+					选择器 {
+						属性名1:属性值1;
+						属性名2:属性值2;
+					}
+				缺点：复用性不高！css代码和html代码分离不彻底！
+                优点：简单！
+                
+        外部结合方式：
+				1，新建一个css样式文件
+				2，编写css代码
+				3，在html文件中引入css外部文件 ,使用link标签引入
+				优点：复用性高！简单！
+				
+			以上三种结合方式中，推荐用谁？
+			三种都有用！
+			外部结合方式！！
+			html中的相对路径!!!
+         -->
+    <!-- 内联结合(行内样式) -->
+    <h1 style="color: brown;font-size: 30px;">一级标题</h1>
+    
+    <!-- 内部结合(页面内样式) -->
+    <h2>二级标题</h2>
+
+    <!-- 外部结合(外部样式) -->
+    <h3>三级标题</h3>
+
+    <hr/>
+    <h4>CSS与HTML结合方式小结</h4>
+    <table border="1" bordercolor="black" cellspacing="0" cellpadding="5">
+        <thead>
+            <tr>
+                <th align="center">CSS与HTML结合方式</th>
+                <th align="center">优点</th>
+                <th align="center">缺点</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center">内联结合</td>
+                <td align="center">简单方便</td>
+                <td align="center">复用性差</td>
+            </tr>
+            <tr>
+                <td align="center">内部结合</td>
+                <td align="center">可以对多个标签进行统一样式设置</td>
+                <td align="center">只能作用与当前页面，不具有普适性</td>
+            </tr>
+            <tr>
+                <td align="center">外部结合</td>
+                <td align="center">复用性高！简单！具有普适性</td>
+                <td align="center">无</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
