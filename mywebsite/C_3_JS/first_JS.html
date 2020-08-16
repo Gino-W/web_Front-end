@@ -87,16 +87,43 @@
             arr[6][1] = "星期六";
             alert(arr);
         }
+        // 无参
+        function method3(){
+            alert("普通按钮");
+        }
+        //有参
+        function method4(a,b){
+            alert(a+b);
+        }
+        //有返回值
+        function method5(a,b){
+            return a+b;
+        }
+        function method6(){
+            alert("username");
+        }
+
+        function load(){
+            alert("页面正在加载");
+        }
+        window.onload=function(){
+            alert("页面正在加载");
+        }
     </script>
     <!-- 引入JS文件 -->
     <script type="text/javascript" src="./JS/myJS.js"></script>
 </head>
-<body>
+<body onload="load()">
     <!-- 定义函数时直接使用JS -->
     <input type="button" value="普通按钮" onclick="alert('Hello World!')" />
     <!-- 嵌入式 -->
     <input type="button" value="普通按钮" onclick="method1()" />
     <!-- 引入式 -->
     <input type="button" value="普通按钮" onclick="method2()" />
+    <input type="button" value="普通按钮" onclick="method3()" />
+    <input type="button" value="普通按钮" onclick="method4(1,2)" />
+    <input type="button" value="普通按钮" onclick="alert(method5(1,2))" />
+    <br/>
+    用户名：<input type="text" name="username" onfocus="method6()" />
 </body>
 </html>
