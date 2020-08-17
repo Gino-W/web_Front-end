@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom</title>
+    <script>
+        window.onload=function load(){
+            //window对象
+            // window.alert("Hello JS");
+            // window.confirm("确认框");
+            // window.prompt("确定输入框");
+            // window.setInterval("method1()", 2000);//周期时间
+            // window.setTimeout("method1()", 1000);//目标时间
+            
+            //location对象
+            // window.location.href = "http://www.baidu.com";
+            // window.location.reload();
+
+            //history对象
+            // window.history.back()
+            // window.history.forward();
+            // window.history.go();
+        }
+        function method1(){
+            alert("I");
+        }
+        function back(){
+            window.history.back();
+        }
+        function forward(){
+            window.history.forward();
+        }
+    </script>
+</head>
+<body>
+    <a href="../Others/OtersHTML/Select_SecondaryLinkage.html">跳转</a>
+    <input type="button" value="回退" onclick="back()" />
+    <input type="button" value="前进" onclick="forward()" />
+</body>
+</html>

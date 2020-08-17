@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时弹出隐藏</title>
+    <script>
+        var time;
+        window.onload=function(){
+            time = window.setTimeout("show()", 1000);
+        }
+        //弹出图片
+        function show(){
+            //获得图片元素对象
+            var imag = document.getElementById("bg3");
+            imag.style.display = "block";
+            window.clearTimeout(time);
+            window.setTimeout("hide()", 1000);
+        }
+        //隐藏图片
+        function hide(){
+            var image = document.getElementById("bg3");
+            image.style.display = "none";
+            window.clearTimeout(time);
+            time = window.setTimeout("show()", 1000);
+        }
+    </script>
+</head>
+<body>
+    <img id="bg3" src="./image/bg3.png" />
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise_5</title>
+    <script>
+        window.onload=function(){
+            //获得表格
+            var tab = document.getElementById("tab1");
+            //获得行数
+            var row = tab.rows.length;
+            //遍历行
+            for(var i=1; i<row; i++){
+                if(i%2 == 0){
+                    tab.rows[i].style.backgroundColor = "pink";
+                }else{
+                    tab.rows[i].style.backgroundColor = "yellow";
+                }
+            }
+        }
+        function checkAll(){
+            //获得表头行的复选框
+            var selectAll = document.getElementById("selectAll");
+            //获得表格体
+            var cb = document.getElementsByName("cb");
+            //判断总复选框是否被选中
+            if(selectAll.checked == true){
+                //上面总复选框被选中，则修改标体中所有复选框为选中
+                for(var i=0;i<cb.length; i++){
+                    cb[i].checked = true;
+                }
+            }else{
+                for(var i=0;i<cb.length; i++){
+                    cb[i].checked = false;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <center><h1>js实现复选框全选全不选</h1></center>
+    <table id="tab1" border="1" align="center" width="700px" heigth="200px" >
+        <thead>
+            <td><input type="checkbox" id="selectAll" onclick="checkAll()"/></td>
+            <th>序号</th>
+            <th>学科</th>
+            <th>描述</th>
+            <th>操作</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" name="cb"/></td>
+                <td>1</td>
+                <td>java</td>
+                <td>万物皆对象，学了Java不愁没对象！</td>
+                <td><a href="#">修改</a>|<a href="#">删除</a></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="cb" /></td>
+                <td>2</td>
+                <td>大数据</td>
+                <td>海量数据的储存分析与处理，超强大！</td>
+                <td><a href="#">修改</a>|<a href="#">删除</a></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="cb" /></td>
+                <td>3</td>
+                <td>前端</td>
+                <td>网站和APP的页面全是他们写出来的，厉害吧！</td>
+                <td><a href="#">修改</a>|<a href="#">删除</a></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

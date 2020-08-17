@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exercise_4</title>
+    <script>
+        window.onload=function(){
+            //获得表格
+            var tab = document.getElementById("tab1");
+            //获得行数
+            var row = tab.rows.length;
+            //遍历行
+            for(var i=0; i<row; i++){
+                if(i%2 == 0){
+                    tab.rows[i].style.backgroundColor = "yellow";
+                }else{
+                    tab.rows[i].style.backgroundColor = "pink";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <center><h1>js实现隔行换色</h1></center>
+    <table id="tab1" border="1" align="center" width="700px" heigth="200px" >
+        <tr>
+            <td>序号</td>
+            <td>学科</td>
+            <td>描述</td>
+            <td>操作</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>java</td>
+            <td>万物皆对象，学了Java不愁没对象！</td>
+            <td><a href="#">修改</a>|<a href="#">删除</a></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>大数据</td>
+            <td>海量数据的储存分析与处理，超强大！</td>
+            <td><a href="#">修改</a>|<a href="#">删除</a></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>前端</td>
+            <td>网站和APP的页面全是他们写出来的，厉害吧！</td>
+            <td><a href="#">修改</a>|<a href="#">删除</a></td>
+        </tr>
+    </table>
+</body>
+</html>

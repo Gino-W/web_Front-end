@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom_2</title>
+    <script>
+        window.onload=function load(){
+            //通过ID获得节点
+            var span1 = document.getElementById("span1");
+            // console.info(span1);
+
+            //通过标签名获得节点
+            var spans = document.getElementsByTagName("span");
+            // console.info(spans.length);
+            // for(var i=0; i<spans.length; i++){
+            //     console.info(spans[i]);
+            // }
+
+            //通过name的属性值获得节点
+            var spans = document.getElementsByName("sp");
+            // console.info(spans.length);
+            // for(var x=0; x<spans.length; x++){
+            //     console.info(spans[x]);
+            // }
+
+            // console.info(span1.innerText);//获取标签内文本值
+            // console.info(span1.innerHTML);//获取标签内文本值和子标签
+            // console.info(span1.nodeName + span1.nodeValue + span1.nodeType)//获得节点名，节点属性，节点类型
+
+            var div1 = document.getElementById("div1");
+            var childs = div1.childNodes;//获得所有子节点(包括换行节点)
+            // console.info(childs.length);
+            // console.info(div1.firstChild);//获得第一个子节点
+            // console.info(div1.lastChild);//获得最后一个子节点
+
+            //创建节点
+            var newelem = document.createElement("input");
+            newelem.setAttribute("type","text");
+            newelem.value = "mary";
+            newelem.style.color = "pink";
+            newelem.id = "new"
+
+            //创建文本节点
+            var textnode = document.createTextNode("js");
+            //在某个节点前插入节点
+            // div1.insertBefore(newelem,span1);
+            //添加子节点
+            // div1.appendChild(textnode);
+            //删除子节点
+            // div1.removeChild(textnode);
+            //替换节点
+            div1.replaceChild(textnode,span1);
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <span id="span1" name="sp">&nbsp;span1</span>
+        <span id="span2" name="sp">span2</span>
+        <span id="span3" name="sp">span3</span>
+    </div>
+</body>
+</html>

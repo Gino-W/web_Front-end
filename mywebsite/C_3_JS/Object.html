@@ -1,14 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
     <script>
         function load(){
-            var str = "HelloJS"
+            // 字符串对象
+            /*
+            var str = "Hello JS"
             alert(str.toUpperCase());
             alert(str.indexOf("l"));
             alert(str.charAt(4));
+            alert(str.substring(1,3));
+            var arr = str.split(" ");
+            alert(arr);
+            */
+
+            //数组对象
+            /*
+            var arry = new Array(1,false,"JS");
+            var arry1 = [2,true,"Hello"];
+            alert(arry.join("："));
+            alert(arry.concat(arry1));
+            alert(arry.reverse());
+            alert(arry.sort());//改变自身的顺序
+            */
+
+            //日期对象
+            /*
+            var date = new Date();
+            var day = date.getDay()
+            alert(date);
+            alert(date.getFullYear() + "年" + (date.getMonth()+1) + "月" + date.getDate() + "日" + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds());
+            */
+
+            //数学对象
+            /*
+            var x = -1.1;
+            alert(Math.abs(x));
+            alert(Math.round(x));
+            alert(Math.random());
+            */
+
+            //数值对象
+            var x = 3.123724;
+            alert(x.toFixed(3))
         }
     </script>
 </head>

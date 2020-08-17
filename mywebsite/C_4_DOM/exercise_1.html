@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <script>
+        window.onload=function(){
+            window.setInterval("bg()", 2000)
+        }
+        
+        var i = 1;
+        function bg(){
+            i++;
+            if(i > 3){
+                i=1;
+            }
+            var img = document.getElementById("img1");
+            img.src = "./image/bg" + i + ".png";
+        }
+    </script>
+</head>
+<body background="../C_1_HTML/image/bg.png">
+    <img id="img1" src="./image/bg1.png" />
+</body>
+</html>
