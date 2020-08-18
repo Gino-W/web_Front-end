@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二级联动</title>
+    <style>
+        select,option{
+            width: 80px;
+            height: 30px;
+        }
+    </style>
+    <script>
+        function getCity(index){
+            //获得市的下拉列表对象
+            var city = document.getElementById("city");
+            //清空市
+            if(index != ""){
+                city.options.length = 0;
+            }
+            //定义省市二维数组
+            var arrs = new Array(3);
+            arrs[-1] = ["请选择"];
+            arrs[0] = ["杭州市","绍兴市","温州市","义乌市"];
+            arrs[1] = ["南京市","苏州市","扬州市","无锡市"];
+            arrs[2] = ["武汉市","襄阳市","荆州市","宜昌市"];
+            
+            for(var i=0; i<arrs[index].length; i++){
+                //创建市的下拉选项
+               var option = new Option(arrs[index][i],i);
+               city.add(option);
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>二级联动</p>
+    <select name="province" onchange="getCity(this.value)">
+        <option value="-1">请选择</option>
+        <option value="0">浙江省</option>
+        <option value="1">江苏省</option>
+        <option value="2">湖北省</option>
+    </select>
+    <select id="city">
+        <option>请选择</option>
+    </select>
+</body>
+</html>
