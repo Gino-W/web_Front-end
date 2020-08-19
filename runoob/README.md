@@ -9,11 +9,15 @@
     - [二、HTML基本标签](#二html基本标签)
         - [2.1 结构标签](#21-结构标签)
         - [2.2 排版标签](#22-排版标签)
-        - [2.3 图片标签](#23-图片标签)
-        - [2.4 列表标签](#24-列表标签)
-            - [2.4.1 有序列表](#241-有序列表)
-            - [2.4.2 无序列表](#242-无序列表)
+        - [2.3 列表标签](#23-列表标签)
+            - [2.3.1 有序列表](#231-有序列表)
+            - [2.3.2 无序列表](#232-无序列表)
+            - [2.3.3 定义列表](#233-定义列表)
+            - [2.3.4 列表嵌套](#234-列表嵌套)
+        - [2.4 图片标签](#24-图片标签)
         - [2.5 超链接标签](#25-超链接标签)
+        - [2.6 容器标签](#26-容器标签)
+        - [2.7 表格标签](#27-表格标签)
 
 <!-- /TOC -->
 
@@ -158,7 +162,81 @@
 >
 > 9.居中标签：\<center>\</ center>
 
-### 2.3 图片标签
+### 2.3 列表标签
+
+#### 2.3.1 有序列表
+
+```html
+<!--ol是有序列表
+        type属性：
+            1  数字类型
+			a  字母字典顺序
+            i  罗马数字
+        start属性：
+            从那个位置开始显示
+            start="2"（从第二条开始显示）
+		-->
+        <ol type="I">
+            <li>条目一</li>
+            <li>条目二</li>
+            <li>条目三</li>
+        </ol>
+```
+
+#### 2.3.2 无序列表
+
+```html
+<!--ul是无序列表
+        type属性：
+            disc 实心圆 
+			circle 空心圆
+			square 黑色方块
+		-->
+        <ul type="square">
+            <li>中国</li>
+            <li>巴基斯坦</li>
+            <li>俄罗斯</li>
+        </ul>
+```
+
+#### 2.3.3 定义列表
+
+> 定义列表：dl(defination list)
+>
+> 定义标题：dt(defination title)
+>
+> 定义描述：dd(defination description)
+
+```html
+        <dl>
+            <dt>自定义标题</dt>
+            <dd>自定义描述</dd>
+        </dl>
+```
+
+#### 2.3.4 列表嵌套
+
+```html
+    <ul>
+            <li>一</li>
+            <li>
+                <dl>
+                    <dt>1</dt>
+                    <dd>1的内容</dd>
+                </dl>
+            </li>
+            <li>
+                二
+                <ol>
+                    <li>。。。</li>
+                    <li>。。。</li>
+                    <li>。。。</li>
+                </ol>
+            </li>
+    </ul>
+```
+
+### 2.4 图片标签
 
 ```html
 <img /> 独立标签
@@ -186,43 +264,6 @@
 >
 >   - ../上级目录
 
-### 2.4 列表标签
-
-#### 2.4.1 有序列表
-
-```html
-<!--ol是有序列表
-        type属性：
-            1  数字类型
-			a  字母字典顺序
-            i  罗马数字
-        start属性：
-            从那个位置开始显示
-            start="2"（从第二条开始显示）
-		-->
-        <ol type="I">
-            <li>条目一</li>
-            <li>条目二</li>
-            <li>条目三</li>
-        </ol>
-```
-
-#### 2.4.2 无序列表
-
-```html
-<!--ul是无序列表
-        type属性：
-            disc 实心圆 
-			circle 空心圆
-			square 黑色方块
-		-->
-        <ul type="square">
-            <li>中国</li>
-            <li>巴基斯坦</li>
-            <li>俄罗斯</li>
-        </ul>
-```
-
 ### 2.5 超链接标签
 
 > 超链接可以是文本，也可以是图片，可以点击链接标签，进入新的文档，或者是当前文档中的某个部分
@@ -234,4 +275,92 @@
             target:_self(当前文档)
                     _blank(新页面,会一直打开新的)
                     _search 之前打开的页面存在，则不打开新的页面，直接复用
+            title：链接简介
 ```
+
+### 2.6 容器标签
+
+>\<div>\</div> ： 块级标签，独占一行，自带换行
+>
+> - 作用：\<div>主要是结合css做页面分块 布局
+>
+>\<span>\</span> ： 行级标签，所有内容都在同一行
+>
+> - 作用：\<span>：进行友好提示信息的显示
+
+### 2.7 表格标签
+
+> 表格由\<table> 标签来定义。每个表格均有若干行（由\<tr> 标签定义），每行被分割为若干单元格（由\<td> 标签定义）。字母 td 指表格数据（table data），即数据单元格的内容。数据单元格可以包含文本、图片、列表、段落、表单、水平线、表格等等。
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TableLabel</title>
+</head>
+<body>
+    <!--创建表格table   行tr  列td
+			table属性：
+                默认没有边框体现
+                border:边框的宽度
+                bordercolor:边框的颜色
+                cellspacing:单元格的间距
+                cellpadding:单元格与内容的间距
+                width:宽度
+                height:高度
+                align:控制表格的对齐方式 left center right
+            
+            td的属性：
+                align:控制的单元格内容的对齐方式 left center right
+                valign:控制单元格内容的垂直对齐方式 top middle bottom
+                colspan:一列占几行
+                rowspan:一行占几列
+
+            th作为表头，默认居中，加粗
+            <thead>：表的首行，里面用<th>
+            <tbody>：表体，里面用<td>
+		-->
+    <table align="center" border="1" bordercolor="green" cellspacing="0" cellpadding="15">
+        <thead>
+            <th>name</th>
+            <th>gender</th>
+            <th>age</th>
+        </thead>
+        <tbody>
+            <td>G</td>
+            <td>male</td>
+            <td>18</td>
+        </tbody>
+    </table>
+    <hr color="black"/>
+    <table align="center" border="1" bordercolor="purple" cellspacing="0" cellpadding="15">
+        <tr>
+            <td>1-1</td><td>1-2</td><td>1-3</td>
+        </tr>
+        <tr>
+            <td>2-1</td><td>2-2</td><td>2-3</td>
+        </tr>
+        <tr>
+            <td>3-1</td><td>3-2</td><td>3-3</td>
+        </tr>
+    </table>
+    <hr color="black"/>
+
+    <!-- colspan与rowspan -->
+    <table align="center" border="1" bordercolor="purple" cellspacing="0" cellpadding="15">
+        <tr>
+            <td rowspan="2">1-1</td><td>1-2</td><td>1-3</td>
+        </tr>
+        <tr>
+            <td>2-2</td><td>2-3</td>
+        </tr>
+        <tr>
+            <td colspan="2">3-1</td><td>3-3</td>
+        </tr>
+    </table>
+</body>
+</html>
+```
+
+![Table](/image/table.png)
