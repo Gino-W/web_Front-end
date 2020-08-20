@@ -363,4 +363,4 @@
 </html>
 ```
 
-![Table](/image/table.png)
+![Table](https://raw.githubusercontent.com/Gino-W/web_Front-end/master/runoob/image/table.png)
