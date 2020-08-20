@@ -6,7 +6,7 @@
         - [1.2 HTML特点](#12-html特点)
         - [1.3 HTML的发展](#13-html的发展)
         - [1.4 HTML基本结构](#14-html基本结构)
-    - [二、HTML基本标签](#二html基本标签)
+    - [二.HTML基本标签](#二html基本标签)
         - [2.1 结构标签](#21-结构标签)
         - [2.2 排版标签](#22-排版标签)
         - [2.3 列表标签](#23-列表标签)
@@ -19,6 +19,30 @@
         - [2.6 容器标签](#26-容器标签)
         - [2.7 表格标签](#27-表格标签)
         - [2.8 文本格式化标签](#28-文本格式化标签)
+        - [2.9 表单标签](#29-表单标签)
+            - [2.9.1 输入标签](#291-输入标签)
+                - [2.9.1.1 文本域](#2911-文本域)
+                - [2.9.1.2 密码框](#2912-密码框)
+                - [2.9.1.3 单选按钮(radio)](#2913-单选按钮radio)
+                - [2.9.1.4 复选框(checkboxes)](#2914-复选框checkboxes)
+                - [2.9.1.5 提交按钮（submit）](#2915-提交按钮submit)
+                - [2.9.1.6 重置按钮（reset）](#2916-重置按钮reset)
+            - [2.9.2 选择列表标签](#292-选择列表标签)
+            - [2.9.3 文本域标签(textarea)](#293-文本域标签textarea)
+            - [2.9.4 下拉列表标签](#294-下拉列表标签)
+            - [2.9.5 按钮标签](#295-按钮标签)
+            - [2.9.6 表单提交](#296-表单提交)
+            - [2.9.7 表单实例](#297-表单实例)
+    - [三.CSS(层叠样式表)](#三css层叠样式表)
+        - [3.1 CSS简介](#31-css简介)
+        - [3.2 CSS优点](#32-css优点)
+        - [3.3 CSS引入(与HTML结合方式)](#33-css引入与html结合方式)
+            - [3.3.1 CSS的书写规范](#331-css的书写规范)
+            - [3.3.2 CSS和HTML结合之內联结合](#332-css和html结合之內联结合)
+            - [3.3.3 CSS和HTML结合之内部结合](#333-css和html结合之内部结合)
+            - [3.3.4 CSS和HTML结合之外部结合](#334-css和html结合之外部结合)
+            - [3.3.5 CSS与HTML结合方式小结](#335-css与html结合方式小结)
+        - [3.4 CSS路径问题](#34-css路径问题)
 
 <!-- /TOC -->
 
@@ -94,7 +118,7 @@
 >
 >注意：对于中文网页需要使用 \<meta charset="utf-8"> 声明编码，否则会出现乱码。有些浏览器(如 360 浏览器)会设置 GBK 为默认编码，则你需要设置为 \<meta charset="gbk">。
 
-## 二、HTML基本标签
+## 二.HTML基本标签
 
 ----
 
@@ -401,3 +425,391 @@
 ```
 
 ![特殊文本](/image/特殊.png)
+
+### 2.9 表单标签
+
+> 概念：表单可以将页面上录入的信息携带到服务器端。它是一个包含表单元素的区域。表单元素是允许用户在表单中（比如：文本域、下拉列表、单选框、复选框等等）输入信息的元素。表单使用表单标签（\<form>）定义。
+
+|   \<form>   | 定义供用户输入的表单            |
+| :---------: | :------------------------------ |
+|  \<input>   | 定义输入域                      |
+| \<textarea> | 定义文本域 (一个多行的输入控件) |
+|  \<select>  | 定义一个选择列表                |
+|  \<option>  | 定义下拉列表中的选项            |
+|  \<button>  | 定义一个按钮                    |
+
+```html
+    <!-- 表单标签：from
+                action属性:提交的路径,默认是提交到当前页面
+                method属性:请求的方式，GET(默认)和POST
+                    -> GET:数据会显示到地址栏中,GET方式提交是有大小限制的
+                    -> POST:数据不会显示到地址栏中,POST方式提交没有大小限制
+            文本框:input
+                name:表单元素的名称
+                value:文本框的默认值
+                type:文本框属性
+                size:文本框的长度
+                maxlength:文本框输入的最大长度
+                readonly:只读文本框(boolean)
+         -->
+```
+
+#### 2.9.1 输入标签
+
+> 多数情况下被用到的表单标签是输入标签（\<input>）。输入类型是由类型属性（type）定义的。
+>
+> name表示控件属性名称，value是控件名称对应的值
+
+##### 2.9.1.1 文本域
+
+```html
+<form>
+    First name:<input type="text" name="firstname" />
+    <br />
+    Last name:<input type="text" name="lastname" />
+</form>
+```
+
+##### 2.9.1.2 密码框
+
+> 当输入密码时，会用*代替
+
+```html
+<form>
+    <input type="password" name="password"/>
+</form>
+```
+
+##### 2.9.1.3 单选按钮(radio)
+
+> 当用户从若干给定的的选择中选取其一时，就会用到单选框。
+>
+> 注意：只能从中选取其一。
+
+```html
+<form>
+    <input type="radio" name="sex" value="male" /> Male
+    <br />
+    <input type="radio" name="sex" value="female" /> Female
+</form>
+```
+
+##### 2.9.1.4 复选框(checkboxes)
+
+> 当用户需要从若干给定的选择中选取一个或若干选项时，就会用到复选框。
+
+```html
+<form>
+    <input type="checkbox" name="bike" />I have a bike
+    <br />
+    <input type="checkbox" name="car" />I have a car
+</form>
+```
+
+##### 2.9.1.5 提交按钮（submit）
+
+> 当用户需要按钮提交时，就会用到提交按钮
+
+```html
+<form>
+    <input type="submit" value="提交"/>
+</form>
+```
+
+##### 2.9.1.6 重置按钮（reset）
+
+> 当用户输入信息想要重置成初始未提交样子，就会用到重置按钮
+
+```html
+<form>
+    <input type="reset" value="重置"/>
+</form>
+```
+
+#### 2.9.2 选择列表标签
+
+> select 元素可创建单选或多选菜单。当提交表单时，浏览器会提交选定的项目，或者收集用逗号分隔的多个选项，将其合成一个单独的参数列表，并且在将 \<select>  表单数据提交给服务器时包括 name 属性。
+
+```html
+<select>
+    <option value ="volvo">Volvo</option>
+    <option value ="saab">Saab</option>
+    <option value="opel">Opel</option>
+    <option value="audi">Audi</option>
+</select>
+```
+
+#### 2.9.3 文本域标签(textarea)
+
+> \<textarea> 标签定义多行的文本输入控件。文本区中可容纳无限数量的文本，其中的文本的默认字体是等宽字体（通常是 Courier）。
+
+```html
+    <textarea rows="3" cols="20">这是一个文本域！</textarea>
+```
+
+#### 2.9.4 下拉列表标签
+
+> option 元素定义下拉列表中的一个选项（一个条目）。浏览器将 \<option> 标签中的内容作为 \<select> 标签的菜单或是滚动列表中的一个元素显示。option 元素位于 select 元素内部。
+
+```html
+<select name="city">
+    <option value="Wuhan" selected="selected">河北</option>
+    <option value="Xiaogan" >北京</option>
+</select>
+```
+
+#### 2.9.5 按钮标签
+
+> \<button> 标签定义一个按钮。
+
+```html
+    <button type="button">按钮</button>
+```
+
+#### 2.9.6 表单提交
+
+>GET(默认)和POST
+>
+> -> GET:数据会显示到地址栏中,GET方式提交是有大小限制的
+>
+> -> POST:数据不会显示到地址栏中,POST方式提交没有大小限制
+
+#### 2.9.7 表单实例
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>FormLabel</title>
+</head>
+<body>
+    <!-- 表单标签：from
+                action属性:提交的路径,默认是提交到当前页面
+                method属性:请求的方式，GET(默认)和POST
+                    -> GET:数据会显示到地址栏中,GET方式提交是有大小限制的
+                    -> POST:数据不会显示到地址栏中,POST方式提交没有大小限制
+            文本框:input
+                name:表单元素的名称
+                value:文本框的默认值
+                type:文本框属性
+                size:文本框的长度
+                maxlength:文本框输入的最大长度
+                readonly:只读文本框(boolean)
+         -->
+    <form action="http://www.baidu.com" method="GET">
+        用户名：<input name="username" value="G" type="text" size="20px" maxlength="6" />
+        <br/>
+        密&nbsp&nbsp&nbsp码：<input name="password" value="123456" type="password" />
+        <br/>
+        性&nbsp&nbsp&nbsp别：<input name="gender" type="radio" value="male" checked="true"/>男
+                             <input name="gender" type="radio" value="female"/>女
+        <br/>
+        爱&nbsp&nbsp&nbsp好：<input name="hobby" type="checkbox" value="sing" checked="true"/>唱歌
+                             <input name="hobby" type="checkbox" value="dancing" />跳舞
+                             <input name="hobby" type="checkbox" value="skiing" />滑雪
+        <br/>
+        国&nbsp&nbsp&nbsp家：<select name="country">
+                                <option value="CHINA">中国</option>
+                                <option value="USA">美国</option>
+                                <option value="JAPAN" selected>日本</option>
+                            </select>
+        <br/>
+        简&nbsp&nbsp&nbsp介：<textarea name="info" cols="5" rows="1">66666</textarea>
+        <br/>
+        <input type="reset" value="重置" />
+        <input type="submit" value="注册"/>
+        <input type="button" value="没卵用" />
+        <input type="hidden" name="hidden" value="111"/>
+    </form>
+</body>
+</html>
+```
+
+![表单实例](/image/表单实例.png)
+
+## 三.CSS(层叠样式表)
+
+----
+
+### 3.1 CSS简介
+
+> - CSS 指层叠样式表 (*C*ascading *S*tyle *S*heets)
+>
+> - 样式定义*如何显示* HTML 元素  
+> - 样式通常存储在*样式表*中  
+> - 把样式添加到 HTML 4.0 中，是为了*解决内容与表现分离的问题*  
+> - *外部样式表*可以极大提高工作效率  
+> - 外部样式表通常存储在 *CSS 文件*中  
+> - 多个样式定义可*层叠*为一
+
+### 3.2 CSS优点
+
+> - 通过CSS可以定义HTML元素如何显示 ，解决了HTML在标签样式上无法满足的需求（HTML相当于毛坯房,很多效果达不到，CSS相当于是在毛坯基础上做精装修）
+>
+> - CSS极大的提高了程序员的工作效率
+> - 使用CSS样式提高了代码的清晰度（类似Java中的分包），让我们将html代码与样式代码分离 ，便于后期维护
+
+### 3.3 CSS引入(与HTML结合方式)
+
+> 关于CSS层叠样式表的使用，就是以HTML结合的方式去修饰HTML样式
+>
+> - 与HTML的内联结合
+> - 与HTML的内部结合
+> - 与HTML的外部结合
+
+#### 3.3.1 CSS的书写规范
+
+> 格式：选择器 {属性:属性值;属性:属性值}
+> 选择器：确定当前css修饰的是哪一个元素
+
+#### 3.3.2 CSS和HTML结合之內联结合
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+       <meta charset="utf-8">
+        <title>CSS和html结合之内联结合</title>
+    </head>
+    <body>
+        <h1 style="color: brown;font-size: 30px;">一级标题</h1>
+    </body>
+</html>
+```
+
+> 优缺点
+>
+> - 优点：简单方便
+> - 缺点：复用性差
+> - 注意：CSS内联代码中所有的符号必须是在英文半角模式下
+
+#### 3.3.3 CSS和HTML结合之内部结合
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CSS和HTML结合之内部结合</title>
+        <!--
+            内部结合
+                1，需要在head标签中，使用style标签
+                2，使用选择器选中元素(后面讲选择器)
+                3，编写css代码
+                格式：
+                    选择器 {
+                        属性名1:属性值1;
+                        属性名2:属性值2;
+                    }
+        -->
+        <style>
+            h2{
+                color: chartreuse;
+                font-size: 60px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>二级标题</h2>
+    </body>
+</html>
+```
+
+> 优缺点
+>
+> - 优点：可以对多个标签进行统一样式设置
+> - 缺点：只能作用于当前页面
+
+#### 3.3.4 CSS和HTML结合之外部结合
+
+> 实现
+>
+> 1. 新建一个css样式文件
+> 2. 使用link标签引入外部样式文件
+
+```css
+/* css文件 */
+h2{
+    color: chartreuse;
+    font-size: 60px;
+}
+```
+
+```html
+<!-- HTML文件 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CSS和html结合之外部结合</title>
+        <link rel="stylesheet" href="css/css01.css" />
+        <!--
+            外部结合方式：
+                1，新建一个css样式文件
+                2，编写css代码
+                3，在html文件中引入css外部文件 ,使用link标签引入
+                优点：复用性高！简单！
+        -->
+    </head>
+    <body>
+        <h3>三级标题</h3>
+    </body>
+</html>
+```
+
+> 优缺点
+>
+> - 优点：HTML页面的大小更小，结构更清晰。加载速度更快。相同的.css文件可以在多个页面上使用。  
+> - 缺点：无
+
+#### 3.3.5 CSS与HTML结合方式小结
+
+| CSS与HTML结合方式 |              优点              |               缺点               |
+| :---------------: | :----------------------------: | :------------------------------: |
+|     内联结合      |            简单方便            |             复用性差             |
+|     内部结合      | 可以对多个标签进行统一样式设置 | 只能作用与当前页面，不具有普适性 |
+|     外部结合      |   复用性高！简单！具有普适性   |                无                |
+
+```html
+<!--
+			内联结合：
+				缺点：不能复用!
+				优点：简单！
+				对少数的特定的元素进行单独设置！
+
+			内部结合：
+				1，需要在head标签中，使用style标签
+				2，使用选择器选中元素(后面详细讲)
+				3，编写css代码
+				格式：
+					选择器 {
+						属性名1:属性值1;
+						属性名2:属性值2;
+					}
+				缺点：复用性不高！css代码和html代码分离不彻底！
+				优点：简单！
+
+			外部结合方式：
+				1，新建一个css样式文件
+				2，编写css代码
+				3，在html文件中引入css外部文件 ,使用link标签引入
+				优点：复用性高！简单！
+				
+			以上三种结合方式中，推荐用谁？
+			三种都有用！
+			外部结合方式！！
+			html中的相对路径!!!
+-->
+```
+
+### 3.4 CSS路径问题
+
+> - 访问路径：
+>   - 绝对路径：不带协议的绝对路径/带协议的绝对路径（绝对路径是从盘符开始的路径，是一种简化版的路径，以当前文件，活动窗口目录为根目录，进行向上或者向下）
+>   - 相对路径：相对于index.html资源去访问css01.css资源（相对路径是从当前路径开始的路径，就是真实的路径，是计算机中完整路径，必须准确，否则不能找到，起点是系统的根目录，也就是各个盘符 ）
+> - CSS中访问路径：比如：<http://127.0.0.1:8020/index.html>
+>   - / 代表文件所在的根目录
+>     ./ 代表文件所在当前目录（./ 可以省略，即：css/css01.css）；意为在index.html的同一个目录下访问css文件夹下的css01.css
+>   - ../ 代表上一级目录
+>   - ../../ 代表文件所在的父级目录的父级目录
