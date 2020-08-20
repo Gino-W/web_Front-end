@@ -364,7 +364,6 @@
 </html>
 ```
 
-<<<<<<< HEAD
 ![Table](/image/table.png)
 
 ### 2.8 文本格式化标签
@@ -402,6 +401,3 @@
 ```
 
 ![特殊文本](/image/特殊.png)
-=======
-![Table](https://raw.githubusercontent.com/Gino-W/web_Front-end/master/runoob/image/table.png)
->>>>>>> 69e9ca85dcc1bbab36f1b6d43b780ee4b553beca
