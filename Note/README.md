@@ -388,7 +388,7 @@
 </html>
 ```
 
-![Table](https://raw.githubusercontent.com/Gino-W/web_Front-end/master/runoob/image/table.png)
+![Table](https://raw.githubusercontent.com/Gino-W/web_Front-end/master/Note/image/table.png)
 
 ### 2.8 文本格式化标签
 
@@ -424,7 +424,7 @@
     <del>今天天气好</del>
 ```
 
-![特殊文本](https://raw.githubusercontent.com/Gino-W/web_Front-end/master/runoob/image/%E7%89%B9%E6%AE%8A.png)
+![特殊文本](https://raw.githubusercontent.com/Gino-W/web_Front-end/master/Note/image/%E7%89%B9%E6%AE%8A.png)
 
 ### 2.9 表单标签
 
@@ -626,7 +626,7 @@
 </html>
 ```
 
-![表单实例](https://raw.githubusercontent.com/Gino-W/web_Front-end/master/runoob/image/%E8%A1%A8%E5%8D%95%E5%AE%9E%E4%BE%8B.png)
+![表单实例](https://raw.githubusercontent.com/Gino-W/web_Front-end/master/Note/image/%E8%A1%A8%E5%8D%95%E5%AE%9E%E4%BE%8B.png)
 
 ## 三.CSS(层叠样式表)
 
