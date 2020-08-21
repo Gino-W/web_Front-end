@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>first_jquery</title>
+    <script type="text/javascript" src="./JS/jquery-3.5.1.js"></script>
+    <script>
+        window.onload=function(){
+            //使用DOM对象
+            var div = document.getElementById("div1");
+            console.info(div);
+            //DOM对象转换为jQuery对象
+            var $div = $(div);
+            console.info($div);
+
+            //使用jQuery对象
+            var $div1 = $("#div1");
+            console.info($div1)
+            //jQuery对象转换DOM为对象,两种方式
+            // var div = $div1.get(0);
+            var div = $div1[0];
+            console.info(div);
+
+            //jquery对象操作DOM--查询文本/属性
+            console.info($div1.html());
+            console.info($div1.text());//不显示HTML代码
+            //访问/设置属性
+            $username = $("#username");
+            console.info($username.val());
+            $username.attr("value","mary");
+            console.info($username.val());
+            console.info($username.attr("value"));
+            console.info($username.attr("name"));
+            //删除属性
+            $username.removeAttr("name");
+            console.info($username.attr("name"));
+
+            var $div2 = $("#div2");
+            // $div2.html("<font color='red'>用户名不能为空</font>");
+            
+            //创建节点
+            $span = $("<span>我是span</span>");
+            
+            //插入子节点
+            // $div1.append($span);//作为最后一个节点插入到div1
+            $div2.prepend($span);//作为第一个节点插入到div2
+            //插入兄弟节点
+            $span.before($("<a href='#'>#</a>"));//在span前添加兄弟节点
+            $span.after($("<a href='#'>#</a>"));//在span后添加兄弟节点
+            
+            //删除节点
+            $span.remove();
+            //清空节点元素
+            $div1.empty();
+
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">&nbsp;我是块级元素</div>
+    <div id="div2"></div>
+    <input id="username" type="text" name="username" value="Jerry">
+</body>
+</html>

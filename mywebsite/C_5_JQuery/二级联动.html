@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二级联动</title>
+    <script src="/C_5_JQuery/JS/jquery-3.5.1.js"></script>
+    <script>
+        function getCity(index){
+            var $city = $("#city");
+            if(index != ""){
+                $city.empty();
+            }
+
+            //定义省市二维数组
+            var arrs = new Array(3);
+            arrs[-1] = ["请选择"];
+            arrs[0] = ["杭州市","绍兴市","温州市","义乌市"];
+            arrs[1] = ["南京市","苏州市","扬州市","无锡市"];
+            arrs[2] = ["武汉市","襄阳市","荆州市","宜昌市"];
+
+            $(arrs[index]).each(function(i, n){
+                //创建option
+                var $option = $("<option>"+n+"</option>");
+                $city.append($option);
+            });
+        }
+    </script>
+</head>
+<body>
+    <p>jQuery实现二级联动</p>
+    <select name="province" onchange="getCity(this.value)">
+        <option value="-1">请选择</option>
+        <option value="0">浙江省</option>
+        <option value="1">江苏省</option>
+        <option value="2">湖北省</option>
+    </select>
+    <select id="city">
+        <option>请选择</option>
+    </select>
+</body>
+</html>
