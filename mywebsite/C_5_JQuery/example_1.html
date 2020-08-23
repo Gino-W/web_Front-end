@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example_1</title>
+    <script src="/C_5_JQuery/JS/jquery-3.5.1.js"></script>
+    <script>
+        $(function(){
+            $("#button1").click(function(){
+                $("#p1").hide();
+            });
+            $("#button2").click(function(){
+                $("#p1").show();
+            });
+
+            /*
+            $("#text").hover(function(){
+                alert("鼠标移入");
+            },function(){
+                alert("鼠标移出");
+            });
+            */
+
+            $("#sel").change(function(){
+                console.info($(this).val());
+            });
+
+            $("#span1").hover(function(){
+                $("#span1").fadeOut();
+            },function(){
+                $("#span1").fadeIn();
+            });
+
+            $("#span2").hover(function(){
+                $("#span2").slideUp();
+            },function(){
+                $("#span2").slideDown();
+            });
+
+            //单机切换事件
+            $("#bt").toggle(function(){
+                alert("点击第一次");
+            },function(){
+                alert("点击第二次");
+            },function(){
+                alert("点击第三次");
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <p id="p1">我将会消失</p>
+    <input id="button1" type="button" value="隐藏,点我^_^"/>
+    <input id="button2" type="button" value="显示,点我^_^"/>
+    <input id="text" type="text" value="嘿嘿嘿，我的小可爱"/>
+    <select id="sel">
+        <option>选项一</option>
+        <option>选项二</option>
+        <option>选项三</option>
+    </select>
+    <span id="span1" style="width:80px;height:80px;display: block; background-color:red;"></span><br>
+    <span id="span2" style="width:80px;height:80px;display: block; background-color: turquoise; "></span><br>
+    <input type="button" id="bt" value="按钮"/>
+
+</body>
+</html>

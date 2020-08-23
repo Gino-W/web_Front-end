@@ -43,6 +43,16 @@
             - [3.3.4 CSS和HTML结合之外部结合](#334-css和html结合之外部结合)
             - [3.3.5 CSS与HTML结合方式小结](#335-css与html结合方式小结)
         - [3.4 CSS路径问题](#34-css路径问题)
+    - [四.CSS选择器](#四css选择器)
+        - [4.1 CSS选择器简介与分类](#41-css选择器简介与分类)
+        - [4.2 CSS选择器的书写规范](#42-css选择器的书写规范)
+        - [4.3 类选择器](#43-类选择器)
+        - [4.4 ID选择器](#44-id选择器)
+        - [4.5 属性选择器](#45-属性选择器)
+        - [4.6 选择器的分组](#46-选择器的分组)
+        - [4.8 选择器的优先级](#48-选择器的优先级)
+        - [4.9 CSS伪类选择器](#49-css伪类选择器)
+    - [五、CSS属性设置](#五css属性设置)
 
 <!-- /TOC -->
 
@@ -813,3 +823,299 @@ h2{
 >     ./ 代表文件所在当前目录（./ 可以省略，即：css/css01.css）；意为在index.html的同一个目录下访问css文件夹下的css01.css
 >   - ../ 代表上一级目录
 >   - ../../ 代表文件所在的父级目录的父级目录
+
+## 四.CSS选择器
+
+----
+
+### 4.1 CSS选择器简介与分类
+
+> 要使用CSS对HTML页面中的元素实现一对一，一对多或者多对一的控制，这就需要用到CSS选择器 。HTML页面中的元素就是通过CSS选择器进行控制的。
+>
+> **选择器分类：** id选择器、类选择器、元素选择器（标签）、选择器的分组、衍生选择器（派生）
+
+### 4.2 CSS选择器的书写规范
+
+> 不管是css和html的内联、内部结合还是外部结合，而选择器是让开发者能够选定元素进行样式的规划
+
+```html
+<!--
+				选择器{
+					属性名:属性值;
+				}
+			
+				id选择器：引用的是id属性值
+                #id属性值{
+                    属性名:属性值;
+                }
+-->
+```
+
+### 4.3 类选择器
+
+> 类选择器：使用”.”来描述，引用的的是元素上的class属性值 ，用于处理多个元素有相同样式效果的
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>类选择器</title>
+        <!--
+			类选择器:引用的是class属性值
+			格式：
+				.class属性值{
+					属性名:属性值;
+				}
+			处理多个元素有相同样式效果的！！！
+		-->
+        <style>
+            font{
+                font-size: 200px;
+            }
+            .one{
+                color: greenyellow;
+            }
+            .two{
+                color: red;
+            }
+            .three{
+                color: pink;
+            }
+        </style>
+    </head>
+    <body>
+        <!--字体颜色：绿-->
+        <font class="one">this is font one</font><br />
+        <font class="one">this is font two</font><br />
+        <!--字体颜色：红-->
+        <font class="two">this is font three</font><br />
+        <font class="two">this is font one</font><br />
+        <!--字体颜色：粉-->
+        <font class="three">this is font three</font><br />
+        <font class="three">this is font two</font><br />
+    </body>
+</html>
+```
+
+### 4.4 ID选择器
+
+> id选择器：它使用#引入，引用的是元素的id属性值
+
+```html
+<head>
+    <style type="text/css">
+        #div1 {
+            font‐size: 20px;
+            color: red;
+        }
+        #div2 {
+            font‐size: 10px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">这是一个div</div>
+    <div id="div2">这是一个div</div>
+</body>
+```
+
+### 4.5 属性选择器
+
+> 标签选择器：对页面上的标签进行统一的设置，引用的就是标签的名称
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>标签选择器</title>
+        <!--
+            标签选择器/元素选择器
+            格式：
+                标签名{
+                    属性名:属性值;
+                }
+            
+            将font标签中的文本颜色修改为红色
+            将span标签中的文本颜色修改为蓝色
+            将div标签中的文本颜色修改为绿色
+            所有的文本大小都为200px
+        -->
+        <style>
+            body{
+                font-size: 200px;
+            }
+            font{
+                color: red;
+            }
+            span{
+                color: blue;
+            }
+            div{
+                color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <font>this is a font</font><br />
+        <span>this is a span</span><br />
+        <font>this is a font</font><br />
+        <div>this is a div</div><br />
+        <span>this is a span</span><br />
+        <font>this is a font</font><br />
+        <div>this is a div</div><br />
+    </body>
+</html>
+```
+
+### 4.6 选择器的分组
+
+> 选择器的分组：多个选择器使用同一段css,那么就可以使用分组。选择器之间使用逗号分开
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>分组选择器</title>
+        <!--
+            选择器分组:如果多个选择器中的css代码相同，那么就可以将这多个选择器划为一组。
+            格式：
+                id选择器,class选择,元素选择器{
+                    属性名:属性值;
+                }
+            font/span/div中的文本内容字体大小为200px,字体颜色为绿色
+        -->
+        <style>
+            #f1,.s1,div{
+                font-size: 200px;
+                color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <font id="f1">this is a font</font><br>
+        <span class="s1">this is a span</span><br>
+        <div>this is a div</div><br>
+    </body>
+</html>
+```
+
+### 4.8 选择器的优先级
+
+> 内联结合方式 > ID选择器 > 类选择器 > 元素选择器
+>
+> **规律：** 作用范围越小，优先级越大
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>选择器的优先级</title>
+        <style>
+            /*
+                优先级:内联样式 > id选择器 > 类选择器 > 标签选择器
+                规律：作用范围越小，优先级越大！！！
+                */
+            /*标签选择器*/
+            font{
+                font-size: 50px;
+                color: yellow;
+            }
+            /*类选择器*/
+            .clazz{
+                font-size: 150px;
+                color: orange;
+            }
+            /*id选择器*/
+            #id1{
+                font-size: 250px;
+                color: orangered;
+            }
+        </style>
+    </head>
+    <body>
+        <!--内联样式-->
+        <font id="id1" class="clazz" style="font-size: 350px; color: red;">
+            这是一个font
+        </font>
+    </body>
+</html>
+```
+
+### 4.9 CSS伪类选择器
+
+> 实现
+
+```html
+            a:link {color: #FF0000}     /* 未访问的链接 */
+            a:visited {color: #00FF00}  /* 已访问的链接 */
+            a:hover {color: #FF00FF}    /* 鼠标移动到链接上 */
+            a:active {color: #0000FF}   /* 选定的链接 */
+```
+
+> 注意：a:hover 必须被置于 a:link 和 a:visited 之后；a:active 必须被置于 a:hover 之后
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CSS伪类</title>
+        <!--
+            a:link {color: #FF0000}	/* 未访问的链接 */
+            a:visited {color: #00FF00}	/* 已访问的链接 */
+            a:hover {color: #FF00FF}	/* 鼠标移动到链接上 */
+            a:active {color: #0000FF}	/* 选定的链接 */
+            注意事项：	a:hover 必须被置于 a:link 和 a:visited 之后
+                        a:active 必须被置于 a:hover 之后
+        -->
+        <style>
+            a:link {
+                /* 未访问的链接 */
+                color: cornflowerblue;
+            }
+
+            a:visited {
+                /* 已访问的链接 */
+                color: red;
+            }
+
+            a:hover {
+                /* 鼠标移动到链接上 */
+                color: orange;
+            }
+            a:active {
+                /* 选定的链接 */
+                color: green;
+            }
+
+            font:hover{
+                color: green;
+                /* 鼠标移动到字体上会变大至100px */
+                font-size: 100px;
+            }
+
+            button{
+                background-color: orange;
+            }
+
+            button:hover{
+                background-color: orangered;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="index.html">this is a super</a><br />
+        <font>this is a font element</font><br />
+        <button>按钮</button><br />
+    </body>
+</html>
+```
+
+## 五、CSS属性设置
+
+----

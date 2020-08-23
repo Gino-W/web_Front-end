@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>exercise_1</title>
+    <title>exercise_2</title>
     <script src="/C_5_JQuery/JS/jquery-3.5.1.js"></script>
     <script>
         window.onload=function(){
             //获得表格
             var tab = document.getElementById("tab1");
+            // var tab1 = $("#tab1");
             //获得行数
             var row = tab.rows.length;
             //遍历行
@@ -22,19 +23,27 @@
         }
         function checkAll(){
             //获得表头行的复选框
-            var selectAll = document.getElementById("selectAll");
+            // var selectAll = document.getElementById("selectAll");
+            var selectAll = $("#selectAll");
             //获得表格体
-            var cb = document.getElementsByName("cb");
+            // var cb = document.getElementsByName("cb");
+            var cb = $("[name='cb']");
             //判断总复选框是否被选中
-            if($(selectAll).prop("checked")){
+            if(selectAll.prop("checked")){
                 //上面总复选框被选中，则修改标体中所有复选框为选中
+                /*
                 $(cb).each(function(i, n){
                     $(cb[i]).prop("checked", true);
                 });
+                */
+                cb.prop("checked",true);
             }else{
+                /*
                 $(cb).each(function(i ,n){
                     $(cb[i]).prop("checked", false);
                 });
+                */
+                cb.prop("checked",false);
             }
         }
     </script>
@@ -73,5 +82,3 @@
             </tr>
         </tbody>
     </table>
-</body>
-</html>

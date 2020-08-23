@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector</title>
+    <script src="/C_5_JQuery/JS/jquery-3.5.1.js"></script>
+    <script>
+        window.onload=function(){
+            //基本选择器
+            var $div1 = $("#div1");//id选择器
+            // alert($div1.text());
+            var $div = $(".div");//class选择器
+            // alert($div.length);
+            var $div1 = $("div");//标签选择器
+            // alert($div.text());
+            // console.info($("*"));//通配符选择器
+            // $("#div1,.span").css("background-color","red");//并列选择器
+
+            //层次选择器
+            // console.info($("#div3 span"));//后代选择器
+            // console.info($("#div3>span"));//直接子元素选择器
+            // console.info($("#span2+span"));//下一个元素选择器
+            // console.info($("#span2~span"));//兄弟元素选择器
+
+            //基本过滤选择器
+            // console.info($("div:first"));//查找第一个元素
+            // console.info($("div:not('#div3')"));
+            // console.info($("div:eq(0)"));
+            // console.info($("div:gt(0)"));
+
+            //内容过滤选择器
+            // console.info($(":contains('我是内联元素span2')"));
+            // console.info($(":empty"));
+            // console.info($(":parent"));
+
+            //可见性选择器
+            // console.info($(":hidden"));
+            // console.info($(":visible"));
+
+            //属性过滤选择器
+            // console.info($("div[class!=div]"));
+
+            //表单选择器
+            // console.info($(":input"));
+            console.info($(":text"));
+        }
+    </script>
+</head>
+<body>
+    <!-- 
+        按照定位的不同特点，jQuery选择器分类如下：
+            基本选择器
+            层级选择器
+            过滤选择器
+            表单选择器
+
+            1.基本选择器
+                使用jQuery进行定位时注意语法的特点，是$符号接小括号
+                id选择器：$("#id")
+                类选择器：$(.class)
+                标签选择器：$("标签名")
+                通配符选择器：$("*")
+                并列选择器：$("选择器,选择器,选择器")
+
+            2.层次选择器
+                后代选择器：使用空格，所有的后代包含孙子及以下的元素
+                子元素选择器：使用> 第一层的元素（儿子）
+                下一个元素：使用+  下一个同辈元素
+                兄弟元素：使用~  后面所有的同辈元素
+
+            3.过滤选择器
+                过滤选择器以":"或"[]"开始
+                    ——>基本过滤选择器
+                            :first              第一个元素
+                            :last               最后一个元素
+                            :not(selector)      把selector排除在外
+                            :even               挑选偶数行
+                            :odd                挑选奇数行
+                            :eq(index)          下标等于index的元素
+                            :gt(index)          下标大于index的元素
+                            :lt(index)          下标小于index的元素
+                    ——>内容过滤选择器
+                            :contains(text)     匹配包含给定文本的元素
+                            :empty              匹配所有不包含元素或文本的空元素
+                            :has(selector)      匹配含有选择器所匹配的元素
+                            :parent             匹配含有子元素或者文本的元素
+                    ——>可见性过滤选择器
+                            :hidden             隐藏
+                            :visible            可见
+                    ——>属性过滤选择器
+
+            4.表单选择器
+                :input
+                :text
+                :password
+                :radio
+                :checkbox
+                :submit
+                :image
+                :reset
+                :button
+                :file
+                :hidden
+         -->
+    <ss></ss>
+    <div id="div1" class="div">我是div1</div>
+    <div id="div2" class="div">我是div2</div>
+    <span class="span">我是span</span>
+    <div id="div3">
+        <div id="div4">
+            <span id="span1" class="span">我是内联元素span1</span>
+        </div>
+        <span id="span2" class="span">我是内联元素span2</span>
+        <span id="span3" class="span">我是内联元素span3</span>
+    </div>
+    <div id="div5" style="display: none;">111</div>
+    <form style="border: aqua 5px solid;height: 100px;width: 200px;">
+        <input type="text" value="aaa"/>
+        <br/>
+        <input type="password" value="123456"/>
+        <br/>
+        <input type="submit" value="提交"/>
+    </form>
+</body>
+</html>

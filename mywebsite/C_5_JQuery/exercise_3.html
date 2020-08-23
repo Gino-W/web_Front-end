@@ -6,6 +6,7 @@
     <title>exercise_1</title>
     <script src="/C_5_JQuery/JS/jquery-3.5.1.js"></script>
     <script>
+        /*
         window.onload=function(){
             //获得表格
             var tab = document.getElementById("tab1");
@@ -18,32 +19,19 @@
                 }else{
                     tab.rows[i].style.backgroundColor = "yellow";
                 }
-            }
+            } 
         }
-        function checkAll(){
-            //获得表头行的复选框
-            var selectAll = document.getElementById("selectAll");
-            //获得表格体
-            var cb = document.getElementsByName("cb");
-            //判断总复选框是否被选中
-            if($(selectAll).prop("checked")){
-                //上面总复选框被选中，则修改标体中所有复选框为选中
-                $(cb).each(function(i, n){
-                    $(cb[i]).prop("checked", true);
-                });
-            }else{
-                $(cb).each(function(i ,n){
-                    $(cb[i]).prop("checked", false);
-                });
-            }
-        }
+        */
+        $(function(){
+            $("tr:odd").css("background-color","green");
+            $("tr:even").css("background-color","yellow");
+        });
     </script>
 </head>
 <body>
-    <center><h1>js实现复选框全选全不选</h1></center>
+    <center><h1>js实现表单换色</h1></center>
     <table id="tab1" border="1" align="center" width="700px" heigth="200px" >
         <thead>
-            <td><input type="checkbox" id="selectAll" onclick="checkAll()"/></td>
             <th>序号</th>
             <th>学科</th>
             <th>描述</th>
@@ -51,21 +39,18 @@
         </thead>
         <tbody>
             <tr>
-                <td><input type="checkbox" name="cb"/></td>
                 <td>1</td>
                 <td>java</td>
                 <td>万物皆对象，学了Java不愁没对象！</td>
                 <td><a href="#">修改</a>|<a href="#">删除</a></td>
             </tr>
             <tr>
-                <td><input type="checkbox" name="cb" /></td>
                 <td>2</td>
                 <td>大数据</td>
                 <td>海量数据的储存分析与处理，超强大！</td>
                 <td><a href="#">修改</a>|<a href="#">删除</a></td>
             </tr>
             <tr>
-                <td><input type="checkbox" name="cb" /></td>
                 <td>3</td>
                 <td>前端</td>
                 <td>网站和APP的页面全是他们写出来的，厉害吧！</td>
