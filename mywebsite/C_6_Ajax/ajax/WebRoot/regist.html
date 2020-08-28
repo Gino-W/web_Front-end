@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>regist.html</title>
+	<meta charset="utf-8"/>
+	<script src="./js/jquery-3.5.1.js"></script>
+	<script>
+		$(function(){
+			//GET方式发送Ajax请求
+			$("#bt").click(function(){
+				//1.创建Ajax对象
+				var xhr;
+				if(window.XMLHttpRequest){
+					xhr = new XMLHttpRequest();
+				}else{
+					xhr = new ActiveXObject("Microsoft.XMLHTTP");			
+				}
+				//获得username的value值
+				var username = $("#username").val();
+				//2.通过open()方法设置Ajax对象发送请求前的必要数据
+				xhr.open('get','regist?username='+username,true);
+				//3.指定事件响应的方法
+				xhr.onreadystatechange=function(){
+					if(xhr.readyState==4 && xhr.status==200){
+						//获得服务器响应的文本值
+						var txt = xhr.responseText;
+						alert(txt);
+					}
+				}
+				//4.调用send()方法发起请求
+				xhr.send(null);
+			});
+			
+			//POST方式发送Ajax请求
+			$("#bt1").click(function(){
+				//1.创建Ajax对象
+				var xhr;
+				if(window.XMLHttpRequest){
+					xhr = new XMLHttpRequest();
+				}else{
+					xhr = new ActiveXObject("Microsoft.XMLHTTP");			
+				}
+				//2.通过open()方法设置Ajax对象发送请求前的必要数据
+				xhr.open('post','regist',true);
+				//POST设置请求头
+				xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+				//3.指定事件响应的方法
+				xhr.onreadystatechange=function(){
+					if(xhr.readyState==4 && xhr.status==200){
+						//获得服务器响应的文本值
+						var txt = xhr.responseText;
+						$("#sp").text(txt);
+					}
+				}
+				//4.调用send()方法发起请求
+				xhr.send("username="+$("#username").val());
+			});
+		});
+	</script>
+  </head>
+  
+  <body>
+  	<form>
+  	用户名：<input type="text" id="username" name="username" value="my"/><span id="sp"></span><br/>
+  	密&nbsp;&nbsp;&nbsp;码：<input type="password" name="password"/><br/>
+  	简&nbsp;&nbsp;&nbsp;介：<textarea rows="5" cols="22"></textarea><br/>
+  	<input type="button" id="bt" value="GET_注册" />
+  	<input type="button" id="bt1" value="POST_注册" />
+  	</form>
+  </body>
+</html>

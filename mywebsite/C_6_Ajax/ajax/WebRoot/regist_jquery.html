@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>regist_jquery.html</title>
+	<meta charset="utf-8">
+	<script src="./js/jquery-3.5.1.js"></script>
+	<script>
+		$(function(){
+			//jQuery方式发送Ajax请求
+			$("#bt").click(function(){
+				//获取用户名和密码的值
+				var username = $("#username").val();
+				var password = $(":password").val();
+				$.ajax({
+					type : 'get',
+					datatype : 'json',
+					url : 'regist?username=' + username + '&password=' + password,
+					//data :
+					async : true,
+					success : function(data){
+						console.info(data);
+						$("#sp").text(data);
+					},
+					error : function(data){
+						alert("注册失败");
+					}
+				})
+			})
+		})
+	</script>
+  </head>
+  
+  <body>
+	<form>
+	  	用户名：<input type="text" id="username" name="username" value="my"/><span id="sp"></span><br/>
+	  	密&nbsp;&nbsp;&nbsp;码：<input type="password" name="password"/><br/>
+	  	简&nbsp;&nbsp;&nbsp;介：<textarea rows="5" cols="22"></textarea><br/>
+	  	<input type="button" id="bt" value="JQuery_注册" />
+  	</form>
+  </body>
+</html>
