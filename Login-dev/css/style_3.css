@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url(../image/bg_github.png);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}2
+.form-box{
+    width: 500px;
+    background: rgba(0, 0,  0, 0.8);
+    margin: 12% auto;
+    padding: 50px 0;
+}
