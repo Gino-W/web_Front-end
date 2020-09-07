@@ -185,32 +185,125 @@
      <hr>
      <!-- 
 表格
+            基础表格：table
+            条纹表格：table-striped
+            带边框的表格：table-bordered
+            鼠标悬停状态表格：table-hover
+            黑色背景表格：table-dark
+            黑色条纹表格：table-dark table-striped
+            鼠标悬停效果 - 黑色背景表格：table-dark table-hover
+            指定意义的颜色类：table-指定意义的颜色(例如：table-success)
+
+
+                类名	                描述
+            .table-primary	    蓝色: 指定这是一个重要的操作
+            .table-success	    绿色: 指定这是一个允许执行的操作
+            .table-danger	    红色: 指定这是可以危险的操作
+            .table-info	        浅蓝色: 表示内容已变更
+            .table-warning	    橘色: 表示需要注意的操作
+            .table-active	    灰色: 用于鼠标悬停效果
+            .table-secondary	灰色: 表示内容不怎么重要
+            .table-light	    浅灰色，可以是表格行的背景
+            .table-dark	        深灰色，可以是表格行的背景
+
+            表头颜色：在 Bootstrap v4.0.0-beta.2 中.thead-dark 类用于给表头添加黑色背景,.thead-light 类用于给表头添加灰色背景
+            较小的表格：.table-sm 类用于通过减少内边距来设置较小的表格
+            响应式表格：.table-responsive 类用于创建响应式表格：在屏幕宽度小于 992px 时会创建水平滚动条，如果可视区域宽度大于 992px 则显示不同效果（没有滚动条
       -->
-      <table class="table">
-          <thead>
-            <tr>
-                <th>FirstName</th>
-                <th>LastName</th>
-                <th>Email</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-                <td>John</td>
-                <td>Doe</td>
-                <td>john@example.com</td>
-            </tr>
-            <tr>
-                <td>Mary</td>
-                <td>Moe</td>
-                <td>mary@example.com</td>
-            </tr>
-            <tr>
-                <td>July</td>
-                <td>Dooley</td>
-                <td>july@example.com</td>
-            </tr>
-          </tbody>
-      </table>
+    <div class="container-fluid">
+        <table class="table">
+            <thead>
+              <tr>
+                  <th>FirstName</th>
+                  <th>LastName</th>
+                  <th>Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                  <td>John</td>
+                  <td>Doe</td>
+                  <td>john@example.com</td>
+              </tr>
+              <tr>
+                  <td>Mary</td>
+                  <td>Moe</td>
+                  <td>mary@example.com</td>
+              </tr>
+              <tr>
+                  <td>July</td>
+                  <td>Dooley</td>
+                  <td>july@example.com</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr>
+    <!-- 
+图像形状
+                类名                    描述
+            .rounded            设置图片显示圆角效果
+            .rounded-circle     设置椭圆形图片
+            .img-thumbnail      设置图片缩略图(图片有边框)
+            .float-right        设置图片右对齐
+            .float-left         设置图片左对齐
+     -->
+    <img src="../Login-dev/image/bg_simple.jpeg" alt="simple" title="simple" class="rounded-circle">
+    <hr>
+    <!-- 
+Jumbotron
+        Jumbotron（超大屏幕）会创建一个大的灰色背景框，里面可以设置一些特殊的内容和信息。
+        提示: Jumbotron 里头可以放一些 HTML标签，也可以是 Bootstrap 的元素。
+
+        全屏幕的 Jumbotron：如果你想创建一个没有圆角的全屏幕，可以在 .jumbotron-fluid 类里头的 div添加 .container 或 .container-fluid 类来实现
+     -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1>菜鸟教程</h1> 
+            <p>学的不仅是技术，更是梦想！！！</p>
+        </div>
+    </div>
+    <hr>
+    <!-- 
+信息提示框
+        提示框可以使用 .alert 类, 后面加上 .alert-success, .alert-info, .alert-warning, .alert-danger, .alert-primary, .alert-secondary, .alert-light 或 .alert-dark 类来实现       
+        提示框添加链接：提示框中在链接的标签上添加 alert-link 类来设置匹配提示框颜色的链接
+        关闭提示框：我们可以在提示框中的 div 中添加 .alert-dismissible 类，然后在关闭按钮的链接上添加 class="close" 和 data-dismiss="alert" 类来设置提示框的关闭操作。
+        提示框动画：.fade 和 .show 类用于设置提示框在关闭时的淡出和淡入效果
+    -->
+    <div class="container-fluid">
+        <div class="alert alert-success alert-dismissible fade show">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>成功!</strong> 指定操作成功提示信息。
+        </div>
+        <div class="alert alert-info alert-dismissible fade show">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>信息!</strong> 请注意这个信息。
+        </div>
+            <div class="alert alert-warning alert-dismissible fade show">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>警告!</strong> 设置警告信息。
+        </div>
+        <div class="alert alert-danger alert-dismissible fade show">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>错误!</strong> 失败的操作。
+        </div>
+        <div class="alert alert-primary alert-dismissible fade show">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>首选!</strong> 这是一个重要的操作信息。
+        </div>
+        <div class="alert alert-secondary alert-dismissible fade show">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>次要的!</strong> 显示一些不重要的信息。
+        </div>
+        <div class="alert alert-dark alert-dismissible fade show">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>深灰色!</strong> 深灰色提示框。
+        </div>
+        <div class="alert alert-light alert-dismissible fade show">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>浅灰色!</strong>浅灰色提示框。
+        </div>
+    </div>
 </body>
 </html>
