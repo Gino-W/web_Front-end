@@ -456,5 +456,153 @@ Jumbotron
     <div class="progress">
         <div class="progress-bar bg-success" style="width:40%">40%</div>
     </div>
+    <br>
+    <!-- 条纹进度条 -->
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped" style="width: 40%;"></div>
+    </div>
+    <br>
+    <!-- 动画进度条 -->
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 80%;"></div>
+    </div>
+    <br>
+    <!-- 混合色彩进度条 -->
+    <div class="progress">
+        <div class="progress-bar bg-success" style="width: 40%;"></div>
+        <div class="progress-bar bg-danger" style="width: 10%;"></div>
+        <div class="progress-bar bg-warning" style="width: 20%;"></div>
+    </div>
+    <hr>
+    <!-- 
+分页
+        Bootstrap 4 可以很简单的实现分页效果。
+        要创建一个基本的分页可以在 <ul> 元素上添加 .pagination 类。然后在 <li> 元素上添加 .page-item 类
+        
+        当前页码状态  .active  高亮显示
+        不可点击的分页链接      .disabled  分页链接不可点击
+        分页显示大小            .pagination-lg 类设置大字体的分页条目，.pagination-sm 类设置小字体的分页条目
+        面包屑导航              .breadcrumb 和 .breadcrumb-item 类用于设置面包屑导航
+     -->
+     <ul class="pagination">
+         <li class="page-item"><a href="#" class="page-link">Previous</a></li>
+         <li class="page-item"><a href="#" class="page-link">1</a></li>
+         <li class="page-item active"><a href="#" class="page-link">2</a></li>
+         <li class="page-item"><a href="#" class="page-link">Next</a></li>
+     </ul>
+     <br>
+    <ul class="pagination pagination-lg">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+    <br>
+    <ul class="pagination pagination-sm">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+    <br>
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Photos</a></li>
+        <li class="breadcrumb-item"><a href="#">Summer 2017</a></li>
+        <li class="breadcrumb-item"><a href="#">Italy</a></li>
+        <li class="breadcrumb-item"><a href="#">Rome</a></li>
+    </ul>
+    <hr>
+    <!-- 
+列表组
+        要创建列表组，可以在 <ul> 元素上添加 .list-group 类, 在 <li> 元素上添加 .list-group-item 类
+        
+        激活状态下的列表项          .active
+        禁用的列表项                .disabled
+
+        链接列表项:要创建一个链接的列表项，可以将 <ul> 替换为 <div> ， <a> 替换 <li>。如果你想鼠标悬停显示灰色背景就添加.list-group-item-action 类
+     -->
+    <div class="container">
+        <ul class="list-group">
+            <li class="list-group-item">First</li>
+            <li class="list-group-item">Second</li>
+            <li class="list-group-item">Third</li>
+        </ul>
+        <br>
+        <ul class="list-group">
+            <li class="list-group-item active">Active item</li>
+            <li class="list-group-item">Second item</li>
+            <li class="list-group-item disabled">Third item</li>
+        </ul>
+    </div>
+    <br>
+    <div class="container">
+        <a href="#" class="list-group-item list-group-action bg-danger">First item</a>
+        <a href="#" class="list-group-item list-group-action bg-warning">Second item</a>
+        <a href="#" class="list-group-item list-group-action bg-success">Third item</a>
+    </div>
+    <br>
+    <div class="container">
+        <a href="#" class="list-group-item list-group-item-danger">First item</a>
+        <a href="#" class="list-group-item list-group-item-warning">Second item</a>
+        <a href="#" class="list-group-item list-group-item-success">Third item</a>
+    </div>
+    <hr>
+    <!-- 
+卡片
+        创建卡片            .card  
+        卡片头部            .card-head 
+        卡片内容            .card-body
+        卡片底部            .card-footer
+     -->
+    <div class="container">
+        <div class="card">
+            <div class="card-body">Basic card</div>
+        </div>
+        <br>
+        <div class="card bg-primary text-white">
+            <div class="card-body">Primary card</div>
+        </div>
+        <br>
+        <div class="card bg-success text-white">
+            <div class="card-body">Success card</div>
+        </div>
+        <br>
+        <div class="card bg-info text-white">
+            <div class="card-body">Info card</div>
+        </div>
+        <br>
+        <div class="card bg-warning text-white">
+            <div class="card-body">Warning card</div>
+        </div>
+        <br>
+        <div class="card bg-danger text-white">
+            <div class="card-body">Danger card</div>
+        </div>
+        <br>
+        <div class="card bg-secondary  text-white">
+            <div class="card-body">Secondary  card</div>
+        </div>
+        <br>
+        <div class="card bg-light text-white">
+            <div class="card-body">Light card</div>
+        </div>
+        <br>
+        <div class="card bg-dark text-white">
+            <div class="card-body">Dark card</div>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Card title</h4>
+                <p class="card-text">Some example text.Some example text.</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
