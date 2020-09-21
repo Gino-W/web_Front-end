@@ -131,7 +131,7 @@
         <h1>末日明天</h1>
         <blockquote class="bolckquote">
             <p>末日的明天，用我最真诚的语言</p>
-            <footer class="blockquote-footer">李不</footer>
+            <footer class="blockquote-footer">--李不</footer>
         </blockquote>
     </div>
     <hr>
@@ -211,7 +211,7 @@
             响应式表格：.table-responsive 类用于创建响应式表格：在屏幕宽度小于 992px 时会创建水平滚动条，如果可视区域宽度大于 992px 则显示不同效果（没有滚动条
       -->
     <div class="container-fluid">
-        <table class="table">
+        <table class="table table-hover">
             <thead>
               <tr>
                   <th>FirstName</th>
@@ -248,7 +248,7 @@
             .float-right        设置图片右对齐
             .float-left         设置图片左对齐
      -->
-    <img src="../Login-dev/image/bg_simple.jpeg" alt="simple" title="simple" class="rounded-circle">
+    <img src="../Login-dev/image/bg_simple.jpeg" alt="simple" title="simple" class="img-thumbnail">
     <hr>
     <!-- 
 Jumbotron
@@ -281,29 +281,59 @@ Jumbotron
             <strong>信息!</strong> 请注意这个信息。
         </div>
             <div class="alert alert-warning alert-dismissible fade show">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <strong>警告!</strong> 设置警告信息。
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>警告!</strong> 设置警告信息。
         </div>
         <div class="alert alert-danger alert-dismissible fade show">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <strong>错误!</strong> 失败的操作。
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>错误!</strong> 失败的操作。
         </div>
         <div class="alert alert-primary alert-dismissible fade show">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <strong>首选!</strong> 这是一个重要的操作信息。
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>首选!</strong> 这是一个重要的操作信息。
         </div>
         <div class="alert alert-secondary alert-dismissible fade show">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <strong>次要的!</strong> 显示一些不重要的信息。
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>次要的!</strong> 显示一些不重要的信息。
         </div>
         <div class="alert alert-dark alert-dismissible fade show">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <strong>深灰色!</strong> 深灰色提示框。
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>深灰色!</strong> 深灰色提示框。
         </div>
         <div class="alert alert-light alert-dismissible fade show">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <strong>浅灰色!</strong>浅灰色提示框。
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>浅灰色!</strong>浅灰色提示框。
         </div>
+    </div>
+    <hr>
+    <!-- 
+按钮
+        按钮类可用于 <a>, <button>, 或 <input> 元素上
+     -->
+    <div class="container-fluid">
+        <button class="btn" type="button">普通按钮</button>
+        <button class="btn btn-primary" type="button">主要按钮</button>
+        <button class="btn btn-secondary" type="button">次要按钮</button>
+        <button class="btn btn-success" type="button">成功</button>
+        <button class="btn btn-info" type="button">信息按钮</button>
+        <button class="btn btn-warning" type="button">警告</button>
+        <button class="btn btn-danger" type="button">危险</button>
+        <button class="btn btn-dark" type="button">黑色按钮</button>
+        <button class="btn btn-light" type="button">浅色按钮</button>
+        <button class="btn btn-link" type="button">链接按钮</button>
+        <!-- 按钮类可用于 <a>, <button>, 或 <input> 元素上 -->
+        <a href="#" class="btn btn-info" role="button">链接按钮</a>
+        <button class="btn btn-info" type="button">按钮</button>
+        <input type="button" class="btn btn-info" value="输入框按钮">
+        <input type="submit" class="btn btn-info" value="提交按钮">
+        <!-- 按钮设置边框 -->
+        <button class="btn btn-outline-info" type="button">信息</button>
+        <!-- 设置按钮大小 -->
+        <button class="btn btn-primary btn-lg" type="button">大号按钮</button>
+        <button class="btn btn-primary btn-sm" type="button">小号按钮</button>
+        <button class="btn btn-primary" type="button">正常按钮</button>
+        <!-- 块级按钮 -->
+        <button class="btn btn-primary btn-block">按钮1</button>
     </div>
 </body>
 </html>
