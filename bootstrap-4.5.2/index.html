@@ -614,5 +614,114 @@ Jumbotron
           <a href="#" class="btn btn-primary">See Profile</a>
         </div>
     </div>
+    <br>
+    <P>图片设置为背景</P>
+    <div class="card" style="width: 400px">
+        <img src="https://static.runoob.com/images/mix/img_avatar.png" alt="Card image" class="card-img-top">
+        <div class="card-img-overlay">
+            <h4 class="card-title">John Doe</h4>
+            <p class="card-text">Some example text.</p>
+            <a href="#" class="btn btn-primary">See Profile</a>
+        </div>
+    </div>
+    <hr>
+    <!-- 
+下拉菜单：
+        Bootstrap4 下拉菜单依赖于 popper.min.js。
+        .dropdown 类用来指定一个下拉菜单。
+        我们可以使用一个按钮或链接来打开下拉菜单， 按钮或链接需要添加 .dropdown-toggle 和 data-toggle="dropdown" 属性。
+        <div> 元素上添加 .dropdown-menu 类来设置实际下拉菜单，然后在下拉菜单的选项中添加 .dropdown-item 类。我们也可以在 <a> 标签中使用
+        
+        .dropdown-divider       下拉菜单中的分割线
+        .dropdown-header        下拉菜单中的标题
+
+        .active                 让下拉菜单的选项高亮显示 (添加蓝色背景)
+        .disabled               禁用下拉菜单的选项
+
+        .dropdown-menu-right    下拉菜单的定位
+     -->
+    <div class="container">
+        <p>下拉菜单</p>
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Button</button>
+            <div class="dropdown-menu">
+                <a href="#" class="dropdown-item">Link1</a>
+                <a href="#" class="dropdown-item">Link2</a>
+                <a href="#" class="dropdown-item">Link3</a>
+            </div>
+        </div>
+        <!-- .dropdown-divider -->
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Button</button>
+            <div class="dropdown-menu">
+                <a href="#" class="dropdown-item">Link1</a>
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item">Link2</a>
+                <a href="#" class="dropdown-item">Link3</a>
+            </div>
+        </div>
+        <!-- .dropdown-header -->
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Button</button>
+            <div class="dropdown-menu">
+                <a href="#" class="dropdown-item">Link1</a>
+                <div class="dropdown-header">Dropdown Header</div>
+                <a href="#" class="dropdown-item">Link2</a>
+                <a href="#" class="dropdown-item">Link3</a>
+            </div>
+        </div>
+        <!-- .active.disabled -->
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Button</button>
+            <div class="dropdown-menu">
+                <a href="#" class="dropdown-item">Link1</a>
+                <a href="#" class="dropdown-item active">Link2</a>
+                <a href="#" class="dropdown-item disabled">Link3</a>
+            </div>
+        </div>
+        <!-- .dropdown-menu-right -->
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Button</button>
+            <div class="dropdown-menu dropdown-menu-left">
+                <a href="#" class="dropdown-item">Link1</a>
+                <a href="#" class="dropdown-item">Link2</a>
+                <a href="#" class="dropdown-item">Link3</a>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <!-- 
+折叠
+        Bootstrap4 折叠可以很容易的实现内容的显示与隐藏
+     -->
+    <div class="container">
+        <p>手风琴实例</p>
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header">
+                    <a href="#collapseOne" class="card-link" data-toggle="collapse">选项一</a>
+                </div>
+                <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                    <div class="card-body">Link1</div>
+                </div>
+            </div>  
+            <div class="card">
+                <div class="card-header">
+                    <a href="#collapseTwo" class="card-link" data-toggle="collapse">选项二</a>
+                </div>
+                <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                    <div class="card-body">Link2</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a href="#collapseThree" class="card-link" data-toggle="collapse">选项三</a>
+                </div>
+                <div id="collapseThree" class="collapse" data-parent="#accordion">
+                    <div class="card-body">Link3</div>
+                </div>
+            </div>   
+        </div>
+    </div>
 </body>
 </html>
