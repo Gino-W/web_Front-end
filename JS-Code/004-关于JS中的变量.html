@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于JS中的变量</title>
+</head>
+<body>
+    <script type="text/javascript">
+        /*
+            回顾java中的变量：
+                1、java中怎样定义声明变量
+                    数据类型 变量名;
+                    例如：
+                        int i;
+                        double b;
+                        boolean c;
+                2、java中的变量怎么赋值
+                    使用“=”运算符进行赋值（“=”运算符右边先执行，将右边执行的结果赋值给右边的变量）
+                    变量名 = 值;
+                    例如：
+                        int a = 7;
+                        double x = 0.12;
+                3、java语言是一种强类型语言，强类型怎样理解？
+                    java语言存在编译阶段，假设有代码 int i = 1;
+                    那么在java中有一个特点是，java程序编译阶段就已经确定了设置的数据类型，该变量的数据类型在编译阶段是int类型
+                    那么这个变量到最终内存释放，一直都是int类型，不可能变成其他类型
+                        int i = 10;
+                        double d = i;
+                        这行代码的意思是声明一个变量d，double类型，把i变量保存的值传给d,i还是int类型
+
+                    byte short int long float double boolean char
+                    1    2     4   8    4     8      1       2
+
+            javascript当中的变量？
+                怎样声明变量？
+                    var 变量名;
+                怎样给变量赋值？
+                    变量名 = 值;
+                javascript是一种弱类型语言，没有编译阶段，一个变量可以随意赋值
+        */
+       //在js中，当一个变量没有手动赋值的时候，系统默认赋值undefined
+       var i;
+       alert("i=" + i);//undefined在js中是一个具体的存在值
+
+       //一个变量没有定义，直接访问
+       alert(x);    //语法错误
+       
+            
+    </script>
+</body>
+</html>
